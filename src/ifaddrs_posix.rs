@@ -79,7 +79,7 @@ impl Iterator for IfAddrsIterator {
 
         Some(unsafe {
             let result = *self.next;
-            self.next = (*self.next).ifa_next;
+            self.next = result.ifa_next;
 
             result
         })
